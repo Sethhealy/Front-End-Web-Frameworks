@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Shopping list</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/Shopping.js"></script>
+        <link href="css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="panel panel-default">
+        <h1 class="text-center"><img src="images/Grocerylist.jpg"></h1>
+
+    </div>
+        <div ng-app="OurShopping" ng-controller="ShoppingController">
+            <div class="container">
+            <input class="add" ng-model="groceryInput" type="text" maxlength="15" required/>
+            <button ng-click="addGrocery()"><p>Enter</p></button>
+
+            <!-- check all boxes  -->
+            <div class="tops">
+            <!-- delete button to delete every checked box -->
+            <button class="delete" ng-click="removeCheckedGrocery($pindex)"><p>Delete all checked boxes</p></button>
+            </div>
+            <div class="container">
+                <div class="list" ng-repeat="grocerylist in groceries track by $index">
+                   <h4>{{ obj }} </h4>
+                    <p class="items"> {{ grocerylist.label }}</p>
+
+                    <!-- my check box input -->
+                    <input class="checkbox" type="checkbox" ng-model="grocerylist.isChecked" />
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

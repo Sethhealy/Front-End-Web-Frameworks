@@ -1,0 +1,59 @@
+body{
+    background: url(../images/paper.png) repeat;
+    width:1220;
+}
+
+.list{
+    width:200px;
+    height:90px;
+    background-color:#55AE3A;
+    float:left;
+    margin:10px;
+    position:relative;
+}
+
+.delete{
+    margin-top: 22px;
+    width:200px;
+    line-height: 16px;
+}
+
+.tops{
+    width:300px;
+    margin-left: 25px;
+}
+
+.add{
+    width:145px;
+    height:22px;
+    margin-top: 10px;
+    margin-left: 25px;
+    line-height: 15px;
+}
+button{
+    height: 24px;
+    border-radius:15px;
+    background-color: purple;
+}
+
+button p{
+    color:white;
+}
+
+.container{
+    margin-top: 10px;
+    width:300px;
+}
+
+.checkbox{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.items{
+        width:100px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top:25px;
+    }
