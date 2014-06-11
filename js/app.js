@@ -1,35 +1,18 @@
-angular.module("OurShopping",[])
+angular.module("OurShopping", [])
+    //calling the controller function
+.controller("ShoppingController", function ($scope, ShoppingService) {
 
-.controller("ShoppingController",function($scope,ShoppingService){
 
 
-
-    $scope.groceries= ShoppingService.getGroceries();
+    $scope.groceries = ShoppingService.getGroceries();
 
 
     $scope.groceryInput = '';
-    $scope.errorMsg = '';
-
-    $scope.addGrocery=function(){
-
-
-
-        if($scope.groceryInput.length == 0){
-
-
-            $scope.errorMsg = "You have to fill all fields por favor";
-            return;
-
-            console.log("bluh");
-        } else {
-
-            ShoppingService.addGrocery($scope.groceryInput);
-            $scope.groceryInput = '';
-        }
+    $scope.addGrocery =function(){
 
     }
 
-
+        //removing the checked item(s)
      $scope.removeCheckedGrocery = function(){
         for(var i = $scope.groceries.length-1; i >=0; i--){
             if($scope.groceries[i].isChecked){
@@ -38,8 +21,8 @@ angular.module("OurShopping",[])
         }
     }
 
-
-$scope.removeGrocery = function(pIndex){
+        //Removing at the pindex
+    $scope.removeGrocery = function(pIndex){
     ShoppingService.removeGroceryAt(pIndex);
 }
 
